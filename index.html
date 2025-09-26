@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> To-Do List 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">💕 My Girly To-Do List 💕</h1>
+                <div class="time-display">
+                    <div class="current-time" id="currentTime">00:00:00</div>
+                    <div class="current-date" id="currentDate">Friday, September 26, 2025</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-main">
+            <!-- Left Panel - Tasks -->
+            <section class="tasks-panel">
+                <div class="panel-header">
+                    <h2>📝 My Tasks</h2>
+                </div>
+                
+                <div class="task-input-section">
+                    <div class="task-form">
+                        <input type="text" id="taskInput" class="form-control task-input" placeholder="Add a new task...">
+                        <div class="task-details">
+                            <input type="date" id="taskDate" class="form-control task-date">
+                            <input type="time" id="taskTime" class="form-control task-time">
+                        </div>
+                        <button class="btn btn--primary add-task-btn" id="addTaskBtn">Add Task ✨</button>
+                    </div>
+                </div>
+
+                <div class="task-list-section">
+                    <div class="task-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="today">Today</button>
+                        <button class="filter-btn" data-filter="pending">Pending</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+                    <ul class="task-list" id="taskList">
+                        <!-- Tasks will be dynamically added here -->
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Center Panel - Calendar -->
+            <section class="calendar-panel">
+                <div class="panel-header">
+                    <h2>📅 Calendar</h2>
+                </div>
+                
+                <div class="calendar-nav">
+                    <button class="btn btn--secondary" id="prevMonth">‹</button>
+                    <span class="calendar-title" id="calendarTitle">September 2025</span>
+                    <button class="btn btn--secondary" id="nextMonth">›</button>
+                </div>
+                
+                <div class="calendar-grid" id="calendarGrid">
+                    <div class="calendar-header">
+                        <div class="calendar-day-label">Sun</div>
+                        <div class="calendar-day-label">Mon</div>
+                        <div class="calendar-day-label">Tue</div>
+                        <div class="calendar-day-label">Wed</div>
+                        <div class="calendar-day-label">Thu</div>
+                        <div class="calendar-day-label">Fri</div>
+                        <div class="calendar-day-label">Sat</div>
+                    </div>
+                    <div class="calendar-body" id="calendarBody">
+                        <!-- Calendar days will be dynamically generated -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel - Timer -->
+            <section class="timer-panel">
+                <div class="panel-header">
+                    <h2>⏰ Focus Timer</h2>
+                </div>
+                
+                <div class="timer-display">
+                    <div class="timer-circle">
+                        <div class="timer-time" id="timerTime">25:00</div>
+                        <div class="timer-label" id="timerLabel">Work Time</div>
+                    </div>
+                </div>
+                
+                <div class="timer-controls">
+                    <button class="btn btn--primary" id="startTimer">Start</button>
+                    <button class="btn btn--secondary" id="pauseTimer">Pause</button>
+                    <button class="btn btn--outline" id="resetTimer">Reset</button>
+                </div>
+                
+                <div class="timer-sessions">
+                    <div class="session-btn active" data-duration="25">Work (25min)</div>
+                    <div class="session-btn" data-duration="5">Short Break (5min)</div>
+                    <div class="session-btn" data-duration="15">Long Break (15min)</div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Notifications Area -->
+        <div class="notifications-area" id="notificationsArea">
+            <!-- Notifications will appear here -->
+        </div>
+    </div>
+
+    <!-- Audio for notifications -->
+    <audio id="notificationSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp3qNWFApGn+Byr2sWESGSy/HAeyELBDNJ2+LQY2EKB0mSz/DVbWsMCUIEgMPt52Y/CgRKmtiNoDQNBjNez9ulCwB1OFtfZXFveFABBwAAA==" type="audio/wav">
+    </audio>
+
+    <script src="app.js"></script>
+</body>
+</html>
